@@ -49,11 +49,10 @@ export const Home = () => {
                         <div className="text-justify ">
                             Mean Mechanics | Robotics Club of IIT Gandhinagar. Keeping up the spirit of Robotics at IITGN, ‘Mean Mechanics’ is one of the most active clubs. It has been very crucial in inspiring and motivating students towards the field of robotics and thinking innovatively. It provides students a hands on experience and is the right platform to get the students tinkering! The club conducts workshops and competitions for the student community in various phases.
                         </div>
-                        <div className="text-justify ">
-                            {/* <h2> About us</h2> */}
-                            <img src="https://images.unsplash.com/photo-1527612820672-5b56351f7346?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cm9ib3RpY3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="About" />
-                        </div>
+                        <img className="max-h-80 justify-self-center" src={process.env.PUBLIC_URL + "/images/home-about.jpg"} alt="About" />
                     </div>
+
+                    <hr />
 
                     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 justify-center md:gap-14 gap-10">
                         <div className="grid justify-center">

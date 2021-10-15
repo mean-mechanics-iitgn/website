@@ -84,7 +84,7 @@ const TeamCard = (props) => {
                             <div></div>
                         }
                         {props.email ?
-                            <a className="text-dark-301 hover:text-dark-801" href={props.email} >
+                            <a className="text-dark-301 hover:text-dark-801" href={"mailto: "+props.email} >
                                 <EmailIcon fontSize="large"/>
                             </a>
                             :

@@ -5,7 +5,6 @@ import LinkIcon from '@mui/icons-material/Link';
 
 
 export const ProjectBody = (props) => {
-    console.log(props.data)
     return (
         <>
             {
@@ -15,10 +14,8 @@ export const ProjectBody = (props) => {
                         id={val.id}
                         title={val.title}
                         img_src={val.image[0].formats.small.url}
-                        alt={val.alt}
                         desc={val.desc}
-                        link={val.link}
-                        link_title={val.link_title}
+                        links={val.links}
                     />
                 })
             }
@@ -28,6 +25,7 @@ export const ProjectBody = (props) => {
 
 
 const OneProject = (props) => {
+    const links = props.links.split("&&&")
     return (
         <>
             <h2>{props.title}</h2>
@@ -35,10 +33,14 @@ const OneProject = (props) => {
                 <div className="text-justify col-span-2">
                     {props.desc}
                     <div className="mt-2">
-                        <h4>Important links</h4>
+                        <h4>Links</h4>
                         <ul>
-                            <li> <a className="no-underline text-dark-401" href="/"><LinkIcon/> Github</a></li>
-                            <li> <a className="no-underline text-dark-401" href="/"><LinkIcon/> Youtube</a></li>
+                            {links.map((val, ind) => {
+                                const link = val.split("--")
+                                return (
+                                    <li key={ind}> <a className="no-underline text-dark-401" href={link[1]}><LinkIcon /> {link[0]}</a></li>
+                                )
+                            })}
                         </ul>
 
                     </div>
