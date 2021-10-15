@@ -35,7 +35,7 @@ export const Home = () => {
             <section id="home" className="">
                 <div className="home-image">
                     <div className="p-4  grid justify-items-center  backdrop-blur bg-light-601 bg-opacity-10 rounded-xl">
-                        <img className="home-logo home-image-items" src="./mean-mech-logoONLY.png" alt="Mean Mechanics Logo" />
+                        <img className="home-logo home-image-items" src={process.env.PUBLIC_URL + "/mean-mech-logoONLY.png"} alt="Mean Mechanics Logo" />
                         <h1 className="home-image-items font-bold text-light-101">Mean Mechanics</h1>
                         <h3 className="home-image-items text-light-101">Robotics Club of IIT Gandhinagar</h3>
                     </div>
@@ -58,7 +58,7 @@ export const Home = () => {
                     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 justify-center md:gap-14 gap-10">
                         <div className="grid justify-center">
                             <h2>Upcoming Events</h2>
-                            <img className="w-9/12 justify-self-center" src="./images/upcoming-events.png" alt="Mean Mechanics Logo" />
+                            <img className="w-9/12 justify-self-center" src={process.env.PUBLIC_URL + "/images/upcoming-events.png"} alt="Mean Mechanics Logo" />
                             <a className="no-underline text-dark-401 font-bold text-xl justify-self-center mt-2" href="/Rulebook for TinkerWiZ.pdf" target="blank">Click to know more</a>
                         </div>
                         <div className="grid justify-center">

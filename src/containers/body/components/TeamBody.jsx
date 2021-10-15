@@ -42,7 +42,7 @@ export const TeamBody = (props) => {
 const TeamContainer = (props) => {
     return (<>
         <div className="team-container">
-            <h3 className="team-heading">{props.position}</h3>
+            <h2 className="team-heading font-medium">{props.position}</h2>
             {
                 props.sortData[props.positionArray.indexOf(props.position)].map((val, ind) => {
                     // console.log(val.position)

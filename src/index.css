@@ -3,4 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* base style */
+@layer base{
+    h1{
+        @apply text-3xl
+    }
+    h2{
+        @apply text-2xl
+    }
+    h3{
+        @apply text-xl
+    }
+    h4{
+        @apply text-lg
+    }
+    button{
+        @apply border-2 rounded-md px-2 py-0.5
+    }
+    input{
+        @apply border-2 px-1 py-0.5 text-sm focus:outline-none
+    }
+}
+
 

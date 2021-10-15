@@ -1,8 +1,4 @@
-// require('dotenv').config()
 import React from "react";
-import { Route } from "react-router-dom";
-
-// import { OneTutorial } from "../containers/body/OneTutorial";
 import { TutorialBody } from "../containers/body/components/TutorialBody";
 import { Loading } from "../containers/body/Loading";
 
@@ -21,20 +17,11 @@ export default class TutorialsData extends React.Component {
   render() {
     return (
       <>
-        <Route
-          path={"/tutorial"}
-          render={() => {
-            return (
-              <>
-                {this.state.loading || !this.state.data ? (
-                  <Loading />
-                ) : (
-                  <TutorialBody data={this.state.data} />
-                )}
-              </>
-            );
-          }}
-        />
+        {this.state.loading || !this.state.data ? (
+          <Loading />
+        ) : (
+          <TutorialBody data={this.state.data} />
+        )}
       </>
     );
   }

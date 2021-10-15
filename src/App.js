@@ -16,6 +16,7 @@ import { Tutorial } from "./containers/body/Tutorial";
 import { Team } from "./containers/body/Team";
 
 function App() {
+  let querry = window.location.search.split("?").slice(1, 2).join();
   useEffect(() => {
     document.querySelectorAll(".nav-uncheck").forEach((element) =>
       element.addEventListener("click", () => {
@@ -27,12 +28,13 @@ function App() {
   return (
     <>
       <Router>
+        {querry ? <Redirect to={process.env.PUBLIC_URL + querry} /> : <></>}
         <Header />
         <section className="nav-uncheck min-h-screen bg-light-401">
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path={process.env.PUBLIC_URL + "/"} component={Home} />
             <Route
-              path="/project"
+              path={process.env.PUBLIC_URL + "/project"}
               render={() => {
                 return (
                   <>
@@ -42,7 +44,7 @@ function App() {
               }}
             />
             <Route
-              path="/tutorial"
+              path={process.env.PUBLIC_URL + "/tutorial"}
               render={() => {
                 return (
                   <>
@@ -51,8 +53,12 @@ function App() {
                 );
               }}
             />
-            <Route exact path="/team" component={Team} />
-            <Redirect to="/" />
+            <Route
+              exact
+              path={process.env.PUBLIC_URL + "/team"}
+              component={Team}
+            />
+            <Redirect to={process.env.PUBLIC_URL + "/"} />
           </Switch>
           <Footer />
         </section>
